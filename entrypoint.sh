@@ -7,5 +7,5 @@ if [[ -n $BASIC_AUTH_USER || -n $BASIC_AUTH_PASS ]]; then
         PARAMS="$PARAMS --credential $BASIC_AUTH_USER:$BASIC_AUTH_PASS"
 fi
 
-wget https://github.com/cyberharsh/hack/blob/master/WEPcrack-01.cap?raw=true
+wget -O WEPcrack-01.cap https://github.com/cyberharsh/hack/blob/master/WEPcrack-01.cap?raw=true
 gotty $PARAMS /bin/bash
