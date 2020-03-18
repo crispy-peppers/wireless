@@ -1,5 +1,5 @@
 #FROM ubuntu
-FROM kalilinux/kali-linux-docker
+FROM kalilinux/kali-rolling
 # Metadata params
 ARG BUILD_DATE
 ARG VERSION
@@ -31,7 +31,7 @@ RUN set -x \
     && apt-get clean
 CMD ["bash"]
 RUN apt-get update && apt-get -y dist-upgrade
-RUN apt-get install -y golang git curl kali-linux kali-linux-full
+RUN apt-get install -y golang git curl kali-linux-core aircrack-ng
 
 # install kubectl
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
